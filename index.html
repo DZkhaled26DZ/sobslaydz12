@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل العملات الرقمية - خالد دراغة</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+    <div class="container">
+        <header>
+            <h1>تحليل العملات الرقمية</h1>
+            <div class="algeria-time" id="algeriaTime"></div>
+        </header>
+
+        <div class="controls">
+            <div class="timeframe-selector">
+                <label for="timeframe">اختر الفترة الزمنية:</label>
+                <select id="timeframe">
+                    <option value="1s">1 ثانية</option>
+                    <option value="1m">1 دقيقة</option>
+                    <option value="3m">3 دقائق</option>
+                    <option value="5m">5 دقائق</option>
+                    <option value="15m">15 دقيقة</option>
+                    <option value="30m">30 دقيقة</option>
+                    <option value="1h">1 ساعة</option>
+                    <option value="2h">2 ساعة</option>
+                    <option value="4h">4 ساعات</option>
+                    <option value="6h">6 ساعات</option>
+                    <option value="8h">8 ساعات</option>
+                    <option value="12h">12 ساعة</option>
+                    <option value="1d">1 يوم</option>
+                    <option value="3d">3 أيام</option>
+                    <option value="1w">1 أسبوع</option>
+                    <option value="1M">1 شهر</option>
+                </select>
+            </div>
+
+            <div class="tail-direction">
+                <label>اتجاه الذيل:</label>
+                <div class="radio-group">
+                    <input type="radio" id="tailUp" name="tailDirection" value="up">
+                    <label for="tailUp">أعلى</label>
+                    <input type="radio" id="tailDown" name="tailDirection" value="down">
+                    <label for="tailDown">أسفل</label>
+                </div>
+            </div>
+
+            <div class="sound-controls">
+                <label for="soundToggle">التنبيهات الصوتية:</label>
+                <input type="checkbox" id="soundToggle" checked>
+                <input type="range" id="volumeControl" min="0" max="100" value="50">
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button id="startAnalysis" class="btn-3d">بدء التحليل</button>
+            <button id="refreshData" class="btn-3d">تحديث البيانات</button>
+            <button id="resetSettings" class="btn-3d">إعادة الضبط</button>
+        </div>
+
+        <div class="results-container">
+            <div class="sort-controls">
+                <label>ترتيب حسب:</label>
+                <button class="sort-btn" data-sort="price">السعر</button>
+                <button class="sort-btn" data-sort="tailLength">طول الذيل</button>
+                <button class="sort-btn" data-sort="time">الوقت</button>
+            </div>
+
+            <table id="resultsTable">
+                <thead>
+                    <tr>
+                        <th>العملة</th>
+                        <th>السعر الحالي</th>
+                        <th>طول الذيل</th>
+                        <th>حجم التداول</th>
+                        <th>الأهداف</th>
+                        <th>وقف الخسارة</th>
+                        <th>الوقت المتوقع</th>
+                        <th>الإجراءات</th>
+                        <th>وقت الظهور</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © خالد دراغة</p>
+        <p>للتواصل: gsmkhaledtiaret@gmail.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
